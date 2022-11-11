@@ -3,6 +3,10 @@ let gnb = document.querySelector(".gnb");
 let bg = document.querySelector("#bg");
 let snb = document.querySelectorAll(".snb");
 
+window.onload = function () {
+  snb.forEach((e) => e.classList.add("off"));
+};
+
 function showBg() {
   bg.classList.add("on");
   bg.classList.remove("off");
