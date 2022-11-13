@@ -84,12 +84,14 @@
 }
 #root .mobile-nav-root .mobile-nav > ul > li .mobile-snb {
   height: 0;
+  max-height: 0;
   overflow: hidden;
   margin-top: 10px;
-  transition: height 0.3s;
+  transition: all 0.3s ease;
 }
 #root .mobile-nav-root .mobile-nav > ul > li .mobile-snb.on {
   height: auto;
+  max-height: 300px;
 }
 #root .mobile-nav-root .mobile-nav > ul > li .mobile-snb > dd {
   width: 100%;
