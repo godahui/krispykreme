@@ -37,7 +37,11 @@
   .mobile-nav-root {
     width: 100vw;
     height: 100vh;
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     display: none;
     &.on {
       display: block;
@@ -414,5 +418,189 @@
         display: none;
       }
     }
+  }
+}
+// 메일 슬라이드
+#main {
+  width: 100%;
+  padding: 130px 0;
+  .inner {
+    width: 100%;
+    padding: 0 100px;
+    display: flex;
+    flex-flow: row nowrap;
+    article {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex: 1 1 auto;
+      .text {
+        flex: 0 0 40%;
+        display: flex;
+        flex-flow: column nowrap;
+        padding-top: 10px;
+        strong {
+          font-weight: 400;
+          font-size: 20px;
+        }
+        h3 {
+          font-weight: 700;
+          font-size: 34px;
+          margin: 20px 0;
+        }
+        a {
+          display: flex;
+          flex-flow: row nowrap;
+          flex: 0 0 40px;
+          padding: 0 15px 0 20px;
+          width: 210px;
+          align-items: center;
+          justify-content: space-between;
+          background-color: #166936;
+          border-radius: 40px;
+          p {
+            color: #fff;
+          }
+          > span {
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            height: 20px;
+            background-color: #fff;
+            border-radius: 50%;
+            margin-left: 10px;
+            img {
+              height: 12px;
+            }
+          }
+        }
+      }
+      .slide {
+        display: flex;
+        flex-flow: row nowrap;
+        flex: 0 0 60%;
+        .slide-bg {
+          width: 72px;
+          height: 480px;
+          background: rgba(22, 105, 54, 0.16);
+          border-radius: 40px 0px 0px 40px;
+        }
+        .slide-wrap {
+          width: 100%;
+          height: 480px;
+          background-color: #ccc;
+          position: relative;
+          .slide-btn-wrap {
+            display: flex;
+            flex-flow: row nowrap;
+            width: 100px;
+            height: 50px;
+
+            position: absolute;
+            top: 0;
+            right: 0;
+            > li {
+              display: flex;
+              flex-flow: row nowrap;
+              flex: 0 0 50%;
+              align-items: center;
+              justify-content: center;
+              cursor: pointer;
+              background-color: rgba(0, 0, 0, 0.2);
+              button {
+                img {
+                  width: 13px;
+                }
+              }
+              &:hover {
+                background-color: rgba(0, 0, 0, 0.3);
+              }
+              &:active {
+                background-color: rgba(0, 0, 0, 0.4);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 1440px) {
+    padding: 100px 0;
+    .inner {
+      article {
+        .text {
+          padding-right: 10px;
+          strong {
+            font-size: 16px;
+          }
+          h3 {
+            font-size: 30px;
+          }
+        }
+        .slide {
+          .slide-bg {
+            height: 400px;
+          }
+          .slide-wrap {
+            height: 400px;
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 1200px) {
+    padding: 20px 0 30px;
+    .inner {
+      padding: 0;
+      article {
+        display: flex;
+        flex-flow: column-reverse nowrap;
+        .text {
+          align-items: center;
+          justify-content: center;
+          flex: 0 0 auto;
+          width: 100%;
+          padding: 20px;
+          background: rgba(22, 105, 54, 0.16);
+          border-radius: 0px 0px 40px 40px;
+          strong {
+            font-size: 14px;
+          }
+          h3 {
+            margin: 10px 0;
+            text-align: center;
+            font-size: 24px;
+          }
+          a {
+            width: 180px;
+            p {
+              font-size: 12px;
+            }
+          }
+        }
+        .slide {
+          display: flex;
+          flex-flow: column nowrap;
+          flex: 0 0 auto;
+          width: 100%;
+          .slide-bg {
+            display: none;
+          }
+          .slide-wrap {
+            flex: 0 0 auto;
+            .slide-btn-wrap {
+              width: 80px;
+              height: 40px;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    padding: 0 0 30px;
   }
 }

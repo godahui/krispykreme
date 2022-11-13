@@ -29,7 +29,11 @@
 #root .mobile-nav-root {
   width: 100vw;
   height: 100vh;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   display: none;
 }
 #root .mobile-nav-root.on {
@@ -368,6 +372,187 @@
   }
   #header .inner .right-area {
     display: none;
+  }
+}
+
+#main {
+  width: 100%;
+  padding: 130px 0;
+}
+#main .inner {
+  width: 100%;
+  padding: 0 100px;
+  display: flex;
+  flex-flow: row nowrap;
+}
+#main .inner article {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex: 1 1 auto;
+}
+#main .inner article .text {
+  flex: 0 0 40%;
+  display: flex;
+  flex-flow: column nowrap;
+  padding-top: 10px;
+}
+#main .inner article .text strong {
+  font-weight: 400;
+  font-size: 20px;
+}
+#main .inner article .text h3 {
+  font-weight: 700;
+  font-size: 34px;
+  margin: 20px 0;
+}
+#main .inner article .text a {
+  display: flex;
+  flex-flow: row nowrap;
+  flex: 0 0 40px;
+  padding: 0 15px 0 20px;
+  width: 210px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #166936;
+  border-radius: 40px;
+}
+#main .inner article .text a p {
+  color: #fff;
+}
+#main .inner article .text a > span {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  margin-left: 10px;
+}
+#main .inner article .text a > span img {
+  height: 12px;
+}
+#main .inner article .slide {
+  display: flex;
+  flex-flow: row nowrap;
+  flex: 0 0 60%;
+}
+#main .inner article .slide .slide-bg {
+  width: 72px;
+  height: 480px;
+  background: rgba(22, 105, 54, 0.16);
+  border-radius: 40px 0px 0px 40px;
+}
+#main .inner article .slide .slide-wrap {
+  width: 100%;
+  height: 480px;
+  background-color: #ccc;
+  position: relative;
+}
+#main .inner article .slide .slide-wrap .slide-btn-wrap {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100px;
+  height: 50px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+#main .inner article .slide .slide-wrap .slide-btn-wrap > li {
+  display: flex;
+  flex-flow: row nowrap;
+  flex: 0 0 50%;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+#main .inner article .slide .slide-wrap .slide-btn-wrap > li button img {
+  width: 13px;
+}
+#main .inner article .slide .slide-wrap .slide-btn-wrap > li:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+#main .inner article .slide .slide-wrap .slide-btn-wrap > li:active {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+@media screen and (max-width: 1440px) {
+  #main {
+    padding: 100px 0;
+  }
+  #main .inner article .text {
+    padding-right: 10px;
+  }
+  #main .inner article .text strong {
+    font-size: 16px;
+  }
+  #main .inner article .text h3 {
+    font-size: 30px;
+  }
+  #main .inner article .slide .slide-bg {
+    height: 400px;
+  }
+  #main .inner article .slide .slide-wrap {
+    height: 400px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  #main {
+    padding: 20px 0 30px;
+  }
+  #main .inner {
+    padding: 0;
+  }
+  #main .inner article {
+    display: flex;
+    flex-flow: column-reverse nowrap;
+  }
+  #main .inner article .text {
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    width: 100%;
+    padding: 20px;
+    background: rgba(22, 105, 54, 0.16);
+    border-radius: 0px 0px 40px 40px;
+  }
+  #main .inner article .text strong {
+    font-size: 14px;
+  }
+  #main .inner article .text h3 {
+    margin: 10px 0;
+    text-align: center;
+    font-size: 24px;
+  }
+  #main .inner article .text a {
+    width: 180px;
+  }
+  #main .inner article .text a p {
+    font-size: 12px;
+  }
+  #main .inner article .slide {
+    display: flex;
+    flex-flow: column nowrap;
+    flex: 0 0 auto;
+    width: 100%;
+  }
+  #main .inner article .slide .slide-bg {
+    display: none;
+  }
+  #main .inner article .slide .slide-wrap {
+    flex: 0 0 auto;
+  }
+  #main .inner article .slide .slide-wrap .slide-btn-wrap {
+    width: 80px;
+    height: 40px;
+  }
+}
+@media screen and (max-width: 768px) {
+  #main {
+    padding: 0 0 30px;
   }
 }
 
