@@ -32,6 +32,135 @@
       display: block;
     }
   }
+
+  // 모바일 메뉴
+  .mobile-nav-root {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: none;
+    &.on {
+      display: block;
+    }
+    .mobile-nav {
+      display: flex;
+      flex-flow: column nowrap;
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 10;
+      width: 300px;
+      height: 100%;
+      background-color: #fff;
+      padding: 20px;
+      border-left: 1px solid #e0e0e0;
+      > ul {
+        display: flex;
+        flex-flow: column nowrap;
+        flex: 1 1 auto;
+        > li {
+          flex: 0 0 30px;
+          margin-bottom: 10px;
+          .title {
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            justify-content: flex-end;
+            flex: 1 1 auto;
+            height: 30px;
+            > .mobile-close-btn {
+              flex: 0 0 auto;
+              width: 20px;
+              &:hover {
+                img {
+                  filter: brightness(1.5);
+                }
+              }
+              img {
+                width: 100%;
+                height: 100%;
+              }
+            }
+          }
+          &:hover {
+            > a > p {
+              color: #d0112b;
+            }
+          }
+          > a {
+            > p {
+              font-size: 18px;
+            }
+          }
+          .mobile-snb {
+            height: 0;
+            overflow: hidden;
+            margin-top: 10px;
+            transition: height 0.3s;
+            &.on {
+              height: auto;
+            }
+            > dd {
+              width: 100%;
+              margin: 5px 0;
+              &:hover a {
+                color: #333;
+              }
+              > a {
+                display: block;
+                width: 100%;
+                font-size: 14px;
+                color: #666;
+              }
+            }
+          }
+        }
+      }
+      .mobile-lang-box {
+        display: flex;
+        flex-flow: row nowrap;
+        flex: 0 0 auto;
+        > ul {
+          display: flex;
+          flex-flow: row nowrap;
+          > li {
+            > button {
+              font-size: 14px;
+              color: #666;
+            }
+            &.on {
+              > button {
+                font-size: 14px;
+                font-weight: 500;
+                color: #d0112b;
+              }
+            }
+            &:first-child {
+              margin-right: 10px;
+            }
+          }
+        }
+      }
+    }
+    .mobile-nav-bg {
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 5;
+    }
+    @media screen and (min-width: 1440px) {
+      display: none !important;
+    }
+    @media screen and (max-width: 768px) {
+      .mobile-nav {
+        width: 100%;
+      }
+    }
+  }
 }
 // 헤더
 #header {
@@ -232,6 +361,37 @@
     }
   }
   @media screen and (max-width: 1440px) {
+    #bg {
+      display: none !important;
+    }
+    .inner {
+      .left-area {
+        flex: 1 1 auto;
+        justify-content: flex-start;
+        .logo {
+          width: 180px;
+        }
+        .gnb {
+          display: none;
+        }
+        .mobile-menu-btn {
+          width: 24px;
+          position: absolute;
+          top: 50%;
+          right: 100px;
+          transform: translate(0, -50%);
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+      .right-area {
+        display: none;
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
     .inner {
       padding: 0 20px;
       .left-area {
@@ -245,14 +405,7 @@
         }
         .mobile-menu-btn {
           width: 18px;
-          position: absolute;
-          top: 50%;
           right: 20px;
-          transform: translate(0, -50%);
-          img {
-            width: 100%;
-            height: 100%;
-          }
         }
       }
       .right-area {

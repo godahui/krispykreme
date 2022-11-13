@@ -3,10 +3,6 @@ let gnb = document.querySelector(".gnb");
 let bg = document.querySelector("#bg");
 let snb = document.querySelectorAll(".snb");
 
-window.onload = function () {
-  snb.forEach((e) => e.classList.add("off"));
-};
-
 function showBg() {
   bg.classList.add("on");
   bg.classList.remove("off");
@@ -33,6 +29,8 @@ let langList = document.querySelector(".lang-list");
 let langListItem = document.querySelectorAll(".lang-list-item");
 let modalBg = document.querySelector(".modal-bg");
 
+let language = "KOR";
+
 langBtn.addEventListener("click", function () {
   if (langBtn.classList.contains("open")) {
     langBtn.classList.remove("open");
@@ -52,10 +50,12 @@ function getValue(value) {
       break;
     default:
   }
+  console.log("value = ", value);
   return value;
 }
 langListItem.forEach((e) =>
   e.addEventListener("click", function () {
+    language = getValue(e.value);
     lang.innerHTML = getValue(e.value);
     langBtn.classList.remove("open");
     modalBg.classList.remove("on");
@@ -64,4 +64,60 @@ langListItem.forEach((e) =>
 modalBg.addEventListener("click", function () {
   langBtn.classList.remove("open");
   modalBg.classList.remove("on");
+});
+
+// Mobile Menu
+let mobileBtn = document.querySelector(".mobile-menu-btn");
+let mobileNav = document.querySelector(".mobile-nav-root");
+let mobileNavBg = document.querySelector(".mobile-nav-bg");
+let mobileCloseBtn = document.querySelector(".mobile-close-btn");
+let mobileSnbBtn = document.querySelectorAll(".mobile-snb-btn");
+let mobileSnb = document.querySelectorAll(".mobile-snb");
+
+function mobileNavOpen() {
+  mobileNav.classList.add("on");
+}
+function mobileNavClose() {
+  mobileNav.classList.remove("on");
+}
+function snbOpen(inx) {
+  mobileSnb.forEach((snb) => {
+    snb.classList.remove("on");
+    if (snb.classList.contains(`mobile-snb-${inx}`)) {
+      snb.classList.toggle("on");
+    }
+  });
+}
+mobileSnbBtn.forEach((btn) => {
+  let inx = btn.dataset.inx;
+  btn.addEventListener("click", function () {
+    snbOpen(inx);
+  });
+});
+
+mobileBtn.addEventListener("click", mobileNavOpen);
+mobileCloseBtn.addEventListener("click", mobileNavClose);
+mobileNavBg.addEventListener("click", mobileNavClose);
+
+let mobileLangItem = document.querySelectorAll(".mobile-lang-item");
+let mobileLangBtn = document.querySelectorAll(".mobile-lang-btn");
+let korBtn = document.querySelector(".KOR");
+let engBtn = document.querySelector(".ENG");
+
+mobileLangItem.forEach((e) => {
+  e.addEventListener("click", function () {
+    if (language === "KOR" && e.classList.contains("KOR")) {
+      e.classList.add("on");
+      engBtn.classList.remove("on");
+    } else if (language === "ENG" && e.classList.contains("ENG")) {
+      e.classList.add("on");
+      korBtn.classList.remove("on");
+    }
+  });
+});
+
+mobileLangBtn.forEach((e) => {
+  e.addEventListener("click", function () {
+    language = e.value;
+  });
 });
