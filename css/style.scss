@@ -42,6 +42,7 @@
     left: 0;
     right: 0;
     bottom: 0;
+    z-index: 10;
     display: none;
     &.on {
       display: block;
@@ -212,7 +213,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: 0;
     // 로고, GNB
     .left-area {
       display: flex;
@@ -385,6 +386,7 @@
           position: absolute;
           top: 50%;
           right: 100px;
+          z-index: 0;
           transform: translate(0, -50%);
           img {
             width: 100%;
@@ -440,6 +442,7 @@
         display: flex;
         flex-flow: column nowrap;
         padding-top: 10px;
+        padding-right: 20px;
         strong {
           font-weight: 400;
           font-size: 20px;
@@ -602,5 +605,161 @@
   }
   @media screen and (max-width: 768px) {
     padding: 0 0 30px;
+  }
+}
+#container {
+  width: 100%;
+  .section-title {
+    display: inline-block;
+    width: fit-content;
+    font-weight: 700;
+    font-size: 28px;
+    color: #333;
+    padding-bottom: 10px;
+    position: relative;
+    &::before {
+      display: block;
+      content: "";
+      width: 100%;
+      height: 6px;
+      background: #166936;
+      border-radius: 40px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+    @media screen and (max-width: 1440px) {
+      font-size: 24px;
+    }
+    @media screen and (max-width: 768px) {
+      font-size: 18px;
+    }
+  }
+  .cont1 {
+    width: 100%;
+    margin: 0 0 50px;
+    .inner {
+      width: 100%;
+      padding: 0 100px;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: flex-start;
+      .top-area {
+        display: flex;
+        flex-flow: row nowrap;
+        margin-bottom: 30px;
+        .left-area {
+          display: flex;
+          flex-flow: column nowrap;
+          padding-right: 15px;
+          > a {
+            flex: 0 0 auto;
+            margin-top: auto;
+          }
+        }
+        .right-area {
+          padding-left: 15px;
+          > a {
+            display: block;
+          }
+        }
+      }
+      .bottom-area {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-end;
+        flex: 0 0 auto;
+        height: 240px;
+        .banner {
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: flex-end;
+          width: initial;
+          height: 240px;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .link {
+          display: flex;
+          flex-flow: row nowrap;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          margin-left: 30px;
+          width: 280px;
+          height: 100%;
+          background: #166936;
+          border-radius: 26px;
+          p {
+            font-weight: 700;
+            font-size: 32px;
+            color: #fff;
+          }
+        }
+      }
+    }
+    @media screen and (max-width: 1200px) {
+      margin: 20px 0;
+      .inner {
+        .top-area {
+          flex-flow: column nowrap;
+          .left-area {
+            > a {
+              display: none;
+            }
+          }
+          .right-area {
+            padding: 0;
+            > a {
+              width: 100%;
+              img {
+                width: 100%;
+                height: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+    @media screen and (max-width: 1135px) {
+      .inner {
+        .top-area {
+          margin-bottom: 15px;
+        }
+        .bottom-area {
+          height: 100px;
+          .banner {
+            display: none;
+          }
+          .link {
+            width: 100%;
+            height: 100px;
+            margin: 0;
+            p {
+              font-size: 20px;
+            }
+          }
+        }
+      }
+    }
+    @media screen and (max-width: 768px) {
+      .inner {
+        padding: 0 20px;
+        .top-area {
+          margin-bottom: 15px;
+        }
+        .bottom-area {
+          height: 60px;
+          .link {
+            height: 60px;
+            p {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
   }
 }
