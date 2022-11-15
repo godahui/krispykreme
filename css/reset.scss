@@ -6,6 +6,13 @@
   &::-webkit-scrollbar {
     width: 8px;
   }
+  @media screen and (max-width: 1200px) {
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+  }
 }
 
 html,
