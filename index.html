@@ -403,5 +403,42 @@
     <script type="text/javascript" src="header.js"></script>
     <script type="text/javascript" src="slide.js"></script>
     <script type="text/javascript" src="event.js"></script>
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-analytics.js";
+
+      // TODO: Add SDKs for Firebase products that you want to use
+
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyDcSc0lb40e0AplQogRhf786XUUHEncyPY",
+
+        authDomain: "krispykreme-26057.firebaseapp.com",
+
+        projectId: "krispykreme-26057",
+
+        storageBucket: "krispykreme-26057.appspot.com",
+
+        messagingSenderId: "548611648035",
+
+        appId: "1:548611648035:web:fb82cd358ec7e6b39e5f96",
+
+        measurementId: "G-HSCFQLBSX9",
+      };
+
+      // Initialize Firebase
+
+      const app = initializeApp(firebaseConfig);
+
+      const analytics = getAnalytics(app);
+    </script>
   </body>
 </html>
