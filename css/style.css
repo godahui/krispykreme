@@ -382,7 +382,7 @@
 
 #main {
   width: 100%;
-  padding: 130px 0;
+  padding: 130px 0 100px;
 }
 #main .inner {
   width: 100%;
@@ -881,7 +881,7 @@
 #container .cont3 {
   display: flex;
   flex-flow: column nowrap;
-  margin: 100px 0 30px;
+  margin: 140px 0 100px;
   width: 100%;
 }
 #container .cont3 .title {
